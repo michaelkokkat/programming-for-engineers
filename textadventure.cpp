@@ -4,26 +4,65 @@ using namespace std;
 
 int main()
 {
-	double x1, y1, x2, y2, sideA, sideB, slope, area, circum, perim;
+	double choice;
 
-	cout << "1. Calculating slope of a line when two points are given.\n";
+	cout << "You are walking through a ";
 
 
 	cout << "\nEnter the x-coordinate of the 1st point on the line: ";
-	cin >> x1;
+	cin >> choice;
 
+	if (choice == 1){
 	cout << "Enter the y-coordinate of the 1st point on the line: ";
-	cin >> y1;
-
+	cin >> choice;
+		if (choice == 1){
+	cout << "Enter the y-coordinate of the 1st point on the line: ";
+	cin >> choice;
+		
+	}
+	
+	else if (choice == 2)
+	{
 	cout << "Enter the x-coordinate of the 2nd point on the line: ";
-	cin >> x2;
+	cin >> choice;
 
-	cout << "Enter the y-coordinate of the 2nd point on the line: ";
-	cin >> y2;
-  
-  perim = x1 + x2 + y1 + y2;
+	}
+	
+	else {
+	cout << "";	
+	}
+		
+	}
+	
+	else if (choice == 2)
+	{
+	cout << "Enter the x-coordinate of the 2nd point on the line: ";
+	cin >> choice;
+	if (choice == 1){
+	cout << "Enter the y-coordinate of the 1st point on the line: ";
+	cin >> choice;
+		
+	}
+	
+	else if (choice == 2)
+	{
+	cout << "Enter the x-coordinate of the 2nd point on the line: ";
+	cin >> choice;
 
-	cout << "The perimeter of the given quadrilateral is" << perim << ".\n";
+	}
+	
+	else {
+	cout << "";	
+	}
+		
+	}
+	
+	else {
+	cout << "";	
+	}
+
+	cout << "\nTHE END.\n";
+	
 	system("pause");
 	return 0;
   }
