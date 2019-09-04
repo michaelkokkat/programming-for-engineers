@@ -11,7 +11,7 @@ using namespace std;
 
 int main()
 {
-	double length, perm_load, var_load, k=0;
+	double perm_load_margin=0.6, var_load_margin = 0.2, unit_weight= 25, length, perm_load, var_load, k=0, depth, width, self_weigh, tot_load, des_act, V, M;
 
 	cout << "In order to design a structurally sound rectangular concrete beam, enter the required specifications as prompted:\n";
 while (k!=1){
