@@ -1,8 +1,7 @@
 /*****************************************/
 /* My Name, My Student Number */
-/* Sept 1, 2016. */
+/* Sept 13, 2019. */
 /* This program prints out some messages: */
-/* on the screen. */
 /*****************************************/
 
 #include <iostream>
@@ -11,37 +10,43 @@ using namespace std;
 
 int main()
 {
-	double perm_load_margin=0.6, var_load_margin = 0.2, unit_weight= 25, length, perm_load, var_load, k=0, depth, width, self_weigh, tot_load, des_act, V, M;
+	double perm_load_margin = 0.6, var_load_margin = 0.2, unit_weight = 25, length, gk, qk, k = 0;
+	double depth, width, self_weight, tot_load, Wd, V, M;
 
 	cout << "In order to design a structurally sound rectangular concrete beam, enter the required specifications as prompted:\n";
-while (k!=1){
+	while (k != -1){
 
-	cout << "\nEnter the x-coordinate of the 1st point on the line: ";
-	cin >> x1;
+		cout << "\nEnter the length of the beam in meters: ";
+		cin >> length;
 
-	cout << "Enter the y-coordinate of the 1st point on the line: ";
-	cin >> y1;
+		cout << "Enter the permanent load on the beam in kN/m: ";
+		cin >> gk;
 
-	cout << "Enter the x-coordinate of the 2nd point on the line: ";
-	cin >> x2;
+		cout << "Enter the variable load on the beam in kN/m: ";
+		cin >> qk;
 
-	cout << "Enter the y-coordinate of the 2nd point on the line: ";
-	cin >> y2;
-
-
-	sideA = x2 - x1;
-	sideB = y2 - y1;
-
-	slope = sideB/sideA;
-
-	cout << "The slope of the line containing the points (" << x1 << ", " << y1 << ") and (" << x2 << ", " << y2 << ") is " << slope << ".\n";
-
-	cout << "2. Calculating area of triangle when base and height are given.\n";
-
-	cout << "Enter 1 to exit the program, or any other number to repeat: ";
-	cin >> k;
-}
 	
+			depth = (length * 1000) / 14;
+			width = 0.4*depth;
+			self_weight = (depth*width*unit_weight)/1000000;
+			tot_load = self_weight + gk;
+			Wd = (1 + perm_load_margin)*gk + (1 + var_load_margin)*qk;
+			V = Wd*length / 2;
+			M = Wd*length*length / 8;
+
+	
+		cout << "Here is a summary of the beam design: \n\n";
+
+		cout << "The minimum values for the size of the beam are:\n";
+		cout << "Depth = " << depth << " mm, Width = " << width << " mm \n";
+		cout << "The total characteristic load = " << tot_load << " kN/m \n";
+		cout << "Shear Force (V) = " << V << " kN \n";
+		cout << "Bending Moment (M) = " << M << " kNm \n\n\n";
+
+		cout << "Enter -1 to exit the program, or any other number to repeat: ";
+		cin >> k;
+	}
+
 	return 0;
 
 }
