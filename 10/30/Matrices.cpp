@@ -6,16 +6,18 @@ bool isEqual(double A[MaxDim][MaxDim], double B[MaxDim][MaxDim]);
 void Add(double A[MaxDim][MaxDim], double B[MaxDim][MaxDim]);
 void Subtract(double A[MaxDim][MaxDim], double B[MaxDim][MaxDim]);
 void MultiplyByConstant(double A[MaxDim][MaxDim], double b);
+bool isDiagonal(double A[MaxDim][MaxDim]);
+bool isIdentity(double A[MaxDim][MaxDim]);
 
 int main()
 {
 	double b;
-	double A[MaxDim][MaxDim] ={ {1, 1, 1, 1},
-								{2, 2, 2, 2},
-								{3, 3, 3, 3},
-								{4, 4, 4, 4} };
+	double A[MaxDim][MaxDim] = { {1, 0, 0, 0},
+								{0, 2, 0, 0},
+								{0, 0, 3, 0},
+								{0, 0, 0, 4} };
 
-	double B[MaxDim][MaxDim] ={ {1, 1, 1, 1},
+	double B[MaxDim][MaxDim] = { {1, 1, 1, 1},
 								{2, 2, 2, 2},
 								{3, 3, 3, 3},
 								{4, 4, 4, 4} };
@@ -23,17 +25,34 @@ int main()
 	if (isEqual(A, B)) {
 		cout << "Matrices are identical\n";
 	}
-		
+
 	else {
 		cout << "Matrices are not identical\n";
 	}
-	
+
 	Add(A, B);
 	Subtract(A, B);
 
 	cout << "Enter the number by which you wish to multiply Matrix A: ";
 	cin >> b;
 	MultiplyByConstant(A, b);
+
+	if (isDiagonal(A)) {
+		cout << "\nMatrix A is a diagonal matrix\n";
+		if (isIdentity(A)) {
+			cout << "\nMatrix A is also an identity matrix\n";
+
+		}
+
+		else {
+			cout << "\nMatrix A is NOT an identity matrix\n";
+		}
+	}
+
+	else {
+		cout << "\nMatrix A is NOT a diagonal matrix\n";
+	}
+
 	return 0;
 }
 
@@ -102,4 +121,41 @@ void MultiplyByConstant(double A[MaxDim][MaxDim], double b)
 		}
 		cout << "|\n";
 	}
+}
+
+bool isDiagonal(double A[MaxDim][MaxDim])
+{
+	int i, j;
+	for (i = 0; i < MaxDim; i++) {
+		for (j = 0; j < MaxDim; j++)
+		{
+			if (i != j) {
+				if (A[i][j] != 0) {
+					return false;
+				}
+			}
+		}
+	}
+	return true;
+}
+
+bool isIdentity(double A[MaxDim][MaxDim])
+{
+	int i, j;
+	for (i = 0; i < MaxDim; i++) {
+		for (j = 0; j < MaxDim; j++)
+		{
+			if (i != j) {
+				if (A[i][j] != 0) {
+					return false;
+				}
+			}
+			else {
+				if (A[i][j] != 1) {
+					return false;
+				}
+			}
+		}
+	}
+	return true;
 }
