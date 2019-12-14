@@ -14,6 +14,15 @@ Our program requires two dependency packages:
 
 We have included all the necessary libraries in this folder, but the Leap Motion Sensor's Desktop Setup will have to be installed separately. The Setup can be found [here](https://www.leapmotion.com/setup/desktop/linux/)
 
+Once you have installed the setup, connect the Leap Motion Sensor to your computer using the USB cable provided. 
+
+Now open a Terminal window and run "sudo leapd --run" in order to start the Leap Motion daemon and turn on the sensor.
+
+This terminal *must* remain open and running while you use the sensor.
+
+
+
+
 documentation
 instructions
 problems
