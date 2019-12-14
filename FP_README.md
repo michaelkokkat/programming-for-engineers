@@ -9,8 +9,8 @@ We seek to coordinate the motion and velocity of the drone with that of the cont
 
 ### Instructions
 Our program requires two dependency packages:
-  Leap Motion Developer SDK (along with Desktop Setup of the Leap Motion Sensor)
-  pyparrot (Python Interface for Parrot Drones)
+  * Leap Motion Developer SDK (along with Desktop Setup of the Leap Motion Sensor)
+  * pyparrot (Python Interface for Parrot Drones)
 
 We have included all the necessary libraries in this folder, but the Leap Motion Sensor's Desktop Setup will have to be installed separately. The Setup can be found [here](https://www.leapmotion.com/setup/desktop/linux/)
 
