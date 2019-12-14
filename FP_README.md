@@ -39,9 +39,26 @@ You can control the drone using the following motions:
  * *Yawing palm:* **Turns drone left/right**
  * *Pitching/Rolling palm:* **Flips drone in given direction**
  
- Enjoy!
+Enjoy!
  
- ### Challenges
+### Problems & Challenges
+We encountered several issues during the course of the project, which we overcame through meticulous research and pestering the monitors at the Unix Lab. A few of the key issues we faced include:
+
+ * The drone remaining endlessly stuck on the first maneuver in the code it encountered despite the conditions no longer being satisfied (resolved by code revision)
+ * The drone’s unwillingness to come down after takeoff during some spotty code implementations, resulting in many cut fingers (resolved by code revision & gloves)
+ * The sensor refusing to calculate and print certain values due to faulty class definition (resolved by code revision)
+ * Unreliable hovering in even slightly windy conditions, causing drift and subsequent chasing down of drone (resolved by indoor operation)
+ * Loosening and midair separation of propeller blades due to frequent collision with fingers (resolved by blade replacement)
+ 
+A few of the challenges we faced with the implementation of the project concept are given below:
+ * Translating the logic we learnt in one language and directly applying it to another (Python)
+  * Learning how to use libraries, modules and classes in Python
+  * Learning how to put together different systems to work in conjunction
+ * Infrastructure behind Bluetooth connectivity
+ * Understanding of sensor capabilities and limitations
+ * Resolving incompatibilities in programming language (Python2 & Python3)
+ * Gain familiarity with use of terminal
+
 
 
 
